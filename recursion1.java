@@ -18,8 +18,17 @@ public static void printSum(int i, int n, int sum){
     sum=sum+i;
     printSum(i+1, n, sum);
 }
+//print factorial of n
+public static void printFactorial(int n, int factorial){
+    if(n ==0){
+        System.out.println(factorial);
+        return;
+    }
+    factorial = n*factorial;
+    printFactorial(n-1, factorial);
+}
     public static void main(String[] args) {
-        printSum(1, 5, 0);
+        printFactorial(6, 1);
         
     }
 }
