@@ -27,8 +27,40 @@ public static void printFactorial(int n, int factorial){
     factorial = n*factorial;
     printFactorial(n-1, factorial);
 }
+//another way of doing it
+public static int calcFactoria(int n){
+    if(n==0 || n==1){
+        return 1;
+    }
+    int smallernum = calcFactoria(n-1);
+    int factorial = n*smallernum;
+    return factorial;
+}
+// print the fibonacci sequence till nth term
+public static void printFib(int a, int b, int n){
+    if(n==0){
+        return;
+    }
+    int c =a+b;
+    System.out.println(c);
+    printFib(b, c, n-1);
+}
+//print x^n (stack height =n)
+public static int caclPower(int x, int n){
+    if(n==0){
+        return 1;
+    } 
+    if(x==0){
+        return 0;
+    }
+    int xPowernm1 = caclPower( x, n-1);
+    int xPown = x*xPowernm1;
+    return xPown;
+}
     public static void main(String[] args) {
-        printFactorial(6, 1);
-        
+        int x= 2;
+        int n =5;
+        int ans = caclPower(x, n);
+        System.out.println(ans);
     }
 }
