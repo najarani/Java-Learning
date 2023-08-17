@@ -54,8 +54,8 @@ public static int caclPower(int x, int n){
         return 0;
     }
     int xPowernm1 = caclPower( x, n-1);
-    int xPown = x*xPowernm1;
-    return xPown;
+     x = x*xPowernm1;
+    return x;
 }
     public static void main(String[] args) {
         int x= 2;
