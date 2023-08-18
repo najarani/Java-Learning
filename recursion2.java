@@ -1,17 +1,19 @@
 public class recursion2 {
-    public static int powerof(int a,int b){
-        if(a==0){
-            return 0;
+    public static void towerofHanoi(int n, String src, String helper, String dest){
+        if(n==1){
+            System.out.println("transfer disk "+n+ " from "+ src + " to "+ dest);
+            return;
         }
-        if(b==0){
-            return 1;
-        }
-        int powerofnm1 = powerof(a, b-1);
-        int finalans= a*powerofnm1;
-        return finalans;
+       towerofHanoi(n-1, src, dest, helper);
+       System.out.println("transfer disk"+n+ "from"+ src + "to"+ dest);
+       towerofHanoi(n-1, helper, src, dest);
+
+        
+
     }
     public static void main(String[] args) {
         
-         System.out.println(powerof(2, 3));
+        int n =1;
+        towerofHanoi(n, "S", "H", "D");
     }
 }
