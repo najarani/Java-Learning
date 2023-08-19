@@ -7,25 +7,39 @@ public class rec3reversestirng {
         System.out.print(s.charAt(in));
         reversstring(s, in-1);
     }
-    public static void firstandlaststring( int index, String str){
-        if(index==str.length()-1){
-            System.out.println("last string is " + str.charAt(index));
+        //find the 1st and last occurance of an element in string
+    public static int first =-1;
+    public static int last =-1;
+    public static void fNlOccofanelement(String str, int index,  char element){
+        if(index==str.length()){
+            System.out.println(first);
+            System.out.println(last);
             return;
         }
-        if(index==0){
-         System.out.println("first string is " +str.charAt(0));
+        char chrChar = str.charAt(index);
+        if(chrChar==element){
+            if(first ==-1){
+                first =index;
+            }
+            else{
+                last = index;
+            }
         }
-        
-        firstandlaststring(index+1, str);
+        fNlOccofanelement(str, index+1, element);
 
     }
-    //find the 1st and last occurance of an element in string
-
-
     public static void main(String[] args) {
-        String str = "abcd";
-        firstandlaststring(0, str);
-    }
+        String str = "abcdab";
+        fNlOccofanelement(str, 0,'a');
 
-    
+
+
+
+
+
+
+
+
+
+    }
 }
