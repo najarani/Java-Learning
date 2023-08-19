@@ -31,7 +31,24 @@ public class rec4arrayproblems {
         }
 
     }
+    // remove duplicates in a string
+    public static boolean map[]= new boolean [26];
+    public static void removedups(String str,int index, String newString){
+        if(index==str.length()){
+            System.out.println(newString);
+            return;
+        }
+        char currChar = str.charAt(index);
+        if(map[currChar-'a']==true){
+            removedups(str, index+1, newString);
+        }else{
+            newString = newString +currChar;
+            map[currChar-'a']=true;
+            removedups(str, index+1, newString);
+        }
+
+    }
    public static void main (String[] args){
-    movestr("axbxcxd", 0, 0, "");
+   removedups("ababcad", 0,"");
    }
 }
