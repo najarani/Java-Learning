@@ -20,3 +20,6 @@ printPermutation(str, "", 0);
 }
 
 }
+
+//n queens
+
