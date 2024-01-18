@@ -6,7 +6,5 @@ public class letslearnqueues {
        //Ques is first in first out
        //Linear data structure
        Queue<String> queue = new LinkedList<String>(null);
-
-
     }
 }
